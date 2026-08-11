@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Contact — The Makers Collective | Waiheke Island Art & Prints"
+  description="Get in touch with The Makers Collective — Waiheke Island artists selling original work and prints."
+>
+  <section class="wrap contact">
+    <span class="eyebrow">Get in touch</span>
+    <h1>Questions about a piece, shipping, or the artists</h1>
+    <p class="lede">
+      Email is the fastest way to reach us — we're a small collective, so
+      you'll hear back from someone who actually knows the work.
+    </p>
+
+    <div class="contact-block">
+      <div>
+        <h3>Email</h3>
+        <a href="mailto:hello@waihekemakers.co.nz">hello@waihekemakers.co.nz</a>
+      </div>
+      <div>
+        <h3>Instagram</h3>
+        <a href="https://instagram.com" target="_blank" rel="noopener">@waihekemakers</a>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>Waiheke Island, Auckland, New Zealand</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact { padding: 3rem 0 4rem; max-width: 60ch; }
+  .contact h1 { margin-top: 0.5rem; }
+  .lede { margin-top: 1rem; }
+  .contact-block {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.8rem;
+  }
+  .contact-block h3 {
+    font-family: var(--font-label);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.78rem;
+    color: var(--sage);
+    margin-bottom: 0.4rem;
+  }
+  .contact-block a {
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--gulf);
+  }
+  .contact-block p { margin: 0; }
+</style>
