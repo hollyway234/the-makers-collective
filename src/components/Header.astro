@@ -1,18 +1,33 @@
 ---
-const nav = [
-  { href: '/', label: 'Home' },
-  { href: '/gallery', label: 'Gallery' },
+const artists = [
+  { href: '/artists/rachel-bakker', label: 'Rachel Bakker' },
+  { href: '/artists/holly-way', label: 'Holly Way' },
+  { href: '/artists/hannah-lewis', label: 'Hannah Lewis' },
+  { href: '/artists/claudia-leit', label: 'Claudia Leit' },
+];
+const rightNav = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 ---
 <header class="site-header">
   <div class="wrap bar">
+    <nav class="side">
+      <div class="has-dropdown">
+        <a href="/">The Makers</a>
+        <div class="dropdown">
+          {artists.map((artist) => (
+            <a href={artist.href}>{artist.label}</a>
+          ))}
+        </div>
+      </div>
+      <a href="/gallery">All Artworks</a>
+    </nav>
     <a href="/" class="wordmark">
       <img src="/images/logo.png" alt="The Makers Collective — Waiheke Island Art Collective" class="logo" />
     </a>
-    <nav>
-      {nav.map((item) => (
+    <nav class="side right">
+      {rightNav.map((item) => (
         <a href={item.href}>{item.label}</a>
       ))}
     </nav>
@@ -22,35 +37,70 @@ const nav = [
 <style>
   .site-header {
     border-bottom: 1px solid var(--line);
-    padding: 1.1rem 0;
+    padding: 0.75rem 0;
   }
   .bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 1rem;
   }
-  .wordmark { display: block; }
+  .wordmark { display: flex; justify-content: center; }
   .logo {
-    height: 46px;
+    height: 168px;
     width: auto;
   }
-  nav {
+  .side {
     display: flex;
     gap: 1.8rem;
   }
-  nav a {
+  .side.right { justify-content: flex-end; }
+  nav a, .has-dropdown > a {
     text-decoration: none;
     font-family: var(--font-label);
-    font-size: 0.85rem;
-    letter-spacing: 0.03em;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--ink-soft);
+    white-space: nowrap;
   }
-  nav a:hover { color: var(--rust); }
+  nav a:hover, .has-dropdown > a:hover { color: var(--rust); }
 
-  @media (max-width: 560px) {
-    .logo { height: 36px; }
-    nav { gap: 1.1rem; flex-wrap: wrap; }
+  .has-dropdown { position: relative; }
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 0.9rem 1.1rem;
+    min-width: 170px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .has-dropdown:hover .dropdown,
+  .has-dropdown:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown a { text-transform: none; letter-spacing: 0.02em; font-size: 0.85rem; }
+
+  @media (max-width: 860px) {
+    .logo { height: 100px; }
+  }
+  @media (max-width: 640px) {
+    .bar { grid-template-columns: 1fr; justify-items: center; gap: 0.75rem; }
+    .logo { height: 90px; }
+    .side, .side.right { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+    .dropdown { left: 50%; transform: translateX(-50%) translateY(4px); }
+    .has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown { transform: translateX(-50%) translateY(0); }
   }
 </style>

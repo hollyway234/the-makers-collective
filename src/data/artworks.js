@@ -13,6 +13,13 @@
 // stripeLink: paste the Payment Link URL from your Stripe dashboard.
 // Remember to set "Limit the number of payments" to 1 for originals
 // (so it can never be bought twice), or to your stock count for prints.
+//
+// PLACEHOLDER PHOTOS: the images below are free-license stock photos
+// from Unsplash (unsplash.com), used here only as stand-ins until real
+// photos of each artist's actual piece are ready. Credits: Steve A
+// Johnson, Paul Blenkhorn, Raymond Petrik, Anne Nygård, Chloe Bolton.
+// Replace each "image:" line with your own photo before launch — see
+// the README for how.
 // =====================================================================
 
 export const artworks = [
@@ -26,7 +33,7 @@ export const artworks = [
     price: 480,
     sold: false,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_01',
-    image: '/images/placeholder-1.svg',
+    image: 'https://images.unsplash.com/photo-1536851101967-55988a52f455?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'piece-02',
@@ -38,7 +45,7 @@ export const artworks = [
     price: 95,
     sold: false,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_02',
-    image: '/images/placeholder-2.svg',
+    image: 'https://images.unsplash.com/photo-1566807387450-b74aea0e727e?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'piece-03',
@@ -50,7 +57,7 @@ export const artworks = [
     price: 650,
     sold: true,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_03',
-    image: '/images/placeholder-3.svg',
+    image: 'https://images.unsplash.com/photo-1552510373-4a5a165dbfb7?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'piece-04',
@@ -62,7 +69,7 @@ export const artworks = [
     price: 75,
     sold: false,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_04',
-    image: '/images/placeholder-4.svg',
+    image: 'https://images.unsplash.com/photo-1729625561980-be4546863105?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'piece-05',
@@ -74,7 +81,7 @@ export const artworks = [
     price: 320,
     sold: false,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_05',
-    image: '/images/placeholder-5.svg',
+    image: 'https://images.unsplash.com/photo-1589051079002-b140a970f568?auto=format&fit=crop&w=1200&q=80',
   },
   {
     id: 'piece-06',
@@ -86,6 +93,6 @@ export const artworks = [
     price: 240,
     sold: false,
     stripeLink: 'https://buy.stripe.com/REPLACE_ME_06',
-    image: '/images/placeholder-6.svg',
+    image: 'https://images.unsplash.com/photo-1597696929736-6d13bed8e6a8?auto=format&fit=crop&w=1200&q=80',
   },
 ];

@@ -5,11 +5,11 @@
    the rust (#A83F1C) sampled directly from the logo — used sparingly.
    =================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500&display=swap');
 
 :root {
   /* Color */
-  --paper:      #FDFDFB;
+  --paper:      #FFFFFF;
   --ink:        #1A1A18;
   --ink-soft:   #5C5A54;
   --rust:       #A83F1C; /* sampled from the logo — the one accent color */
@@ -17,9 +17,9 @@
   --line-soft:  #EFEDE6;
 
   /* Type */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', -apple-system, sans-serif;
-  --font-label: 'Inter', -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', -apple-system, sans-serif;
+  --font-label: 'Jost', -apple-system, sans-serif;
 
   /* Layout */
   --max-width: 1180px;
@@ -126,9 +126,11 @@ hr.rule {
   font-family: var(--font-label);
 }
 .wall-label .title {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--rust);
   margin-bottom: 0.15rem;
 }
 .wall-label .artist {
@@ -143,6 +145,10 @@ hr.rule {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+}
+.wall-label .price {
+  color: var(--rust);
+  font-weight: 500;
 }
 .wall-label .sold {
   color: var(--rust);
